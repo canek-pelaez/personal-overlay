@@ -1,0 +1,10 @@
+[Unit]
+Description=Sets the governor to powersave
+After=basic.target
+
+[Service]
+ExecStart=/usr/bin/setgovernor
+Type=oneshot
+
+[Install]
+WantedBy=multi-user.target

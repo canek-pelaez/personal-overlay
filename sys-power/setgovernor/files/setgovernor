@@ -1,0 +1,9 @@
+#!/bin/sh
+
+source /etc/setgovernor.conf
+
+LAST_CPU=$((${NUM_CPUS} - 1))
+
+for i in $(seq 0 "${LAST_CPU}"); do
+    /bin/echo "${GOVERNOR}" > "/sys/devices/system/cpu/cpu${i}/cpufreq/scaling_governor"
+done
