@@ -22,7 +22,6 @@ RDEPEND="
 	>=dev-libs/glib-2.30:2
 	x11-libs/gdk-pixbuf:2[jpeg]
 	>=media-libs/gexiv2-0.5:0
-	media-gfx/imagemagick
 	>=dev-lang/python-3.2:3.2
 "
 DEPEND="${RDEPEND}
