@@ -8,15 +8,16 @@ LICENSE="GPL-2"
 KEYWORDS="~amd64"
 SLOT="1.0"
 
-IUSE="a52dec assrender cdio cdparanoia dts dvb dvdread dv faac faad
-      flac jack jpeg lame libav libmms libpng libvisual mad mimic
-      modplug mpeg2dec mpeg2enc mplex oss pulse raw1394 resindvd
-      rtmp schroedinger shout2 sidplay soundtouch soup speex taglib
-      twolame v4l2 voaacenc voamrwbenc vpx wavpack x264 ximagesrc"
+IUSE="a52dec amr assrender cdio cdparanoia dts dvb dvdread dv faac faad flac
+      gdkpixbuf jack jpeg lame libav libmms libpng libvisual mad mimic modplug
+      mpeg2dec mpeg2enc mplex opus oss pulse raw1394 resindvd rtmp schroedinger
+      shout2 sidplay soundtouch soup speex taglib twolame v4l2 voaacenc
+      voamrwbenc vpx wavpack x264 ximagesrc"
 
 RDEPEND="
 	ximagesrc? ( media-plugins/gst-plugins-ximagesrc:1.0 )
 	a52dec? ( media-plugins/gst-plugins-a52dec:1.0 )
+	amr? ( media-plugins/gst-plugins-amr:1.0 )
 	assrender? ( media-plugins/gst-plugins-assrender:1.0 )
 	cdio? ( media-plugins/gst-plugins-cdio:1.0 )
 	cdparanoia? ( media-plugins/gst-plugins-cdparanoia:1.0 )
@@ -27,6 +28,7 @@ RDEPEND="
 	faac? ( media-plugins/gst-plugins-faac:1.0 )
 	faad? ( media-plugins/gst-plugins-faad:1.0 )
 	flac? ( media-plugins/gst-plugins-flac:1.0 )
+	gdkpixbuf? ( media-plugins/gst-plugins-gdkpixbuf:1.0 )
 	jack? ( media-plugins/gst-plugins-jack:1.0 )
 	jpeg? ( media-plugins/gst-plugins-jpeg:1.0 )
 	lame? ( media-plugins/gst-plugins-lame:1.0 )
@@ -40,6 +42,7 @@ RDEPEND="
 	mpeg2dec? ( media-plugins/gst-plugins-mpeg2dec:1.0 )
 	mpeg2enc? ( media-plugins/gst-plugins-mpeg2enc:1.0 )
 	mplex? ( media-plugins/gst-plugins-mplex:1.0 )
+	opus?  ( media-plugins/gst-plugins-opus:1.0 )
 	oss? ( media-plugins/gst-plugins-oss:1.0 )
 	pulse? ( media-plugins/gst-plugins-pulse:1.0 )
 	raw1394? ( media-plugins/gst-plugins-raw1394:1.0 )
