@@ -22,6 +22,7 @@ RDEPEND="
 	>=x11-libs/gtk+-3.2:3[X]
 	>=dev-libs/glib-2.30:2
 	x11-libs/gdk-pixbuf:2[jpeg]
+	dev-libs/libgee:0.8
 	>=media-libs/gexiv2-0.5:0
 	>=dev-lang/python-3.2:3.2
 "
