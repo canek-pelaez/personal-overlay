@@ -29,10 +29,6 @@ DEPEND="${RDEPEND}
 	$(vala_depend)
         sys-devel/m4
 "
-
-# Valac gets confused
-MAKEOPTS="${MAKEOPTS} -j1"
-
 src_prepare() {
 	gnome2-live_src_prepare
 	vala_src_prepare
