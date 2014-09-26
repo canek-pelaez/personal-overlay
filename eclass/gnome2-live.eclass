@@ -14,7 +14,7 @@
 # Always to be imported *AFTER* gnome2.eclass
 #
 
-inherit autotools gnome2 gnome2-utils libtool git-2
+inherit autotools-utils gnome2 gnome2-utils libtool git-2
 
 # Stolen from git.eclass
 EXPORTED_FUNCTIONS="src_unpack pkg_postinst"
