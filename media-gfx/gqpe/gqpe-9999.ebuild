@@ -30,3 +30,8 @@ DEPEND="${RDEPEND}
 	$(vala_depend)
         sys-devel/m4
 "
+
+src_prepare() {
+	gnome2-live_src_prepare
+	vala_src_prepare
+}
