@@ -23,6 +23,7 @@ src_install() {
 	dosym /usr/bin/kerninst /usr/bin/kerninst-install
 	dosym /usr/bin/kerninst /usr/bin/kerninst-mkinitrd
 	dosym /usr/bin/kerninst /usr/bin/kerninst-updatebm
+	dosym /usr/bin/kerninst /usr/bin/kerninst-clean
 	insinto /etc/kerninst
 	doins kerninst.conf
 	dodoc README COPYING AUTHORS
