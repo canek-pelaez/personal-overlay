@@ -7,7 +7,7 @@ inherit java-vm-2
 
 DESCRIPTION="A hastily made binary build of the 64 bitSun JDK"
 HOMEPAGE="http://www.oracle.com/technetwork/java/javase/downloads/jdk8-downloads-2133151.html"
-SRC_URI="jdk-8u20-linux-x64.tar.gz"
+SRC_URI="jdk-8u45-linux-x64.tar.gz"
 
 LICENSE="Oracle-BCLA-JavaSE"
 SLOT="8"
@@ -18,7 +18,7 @@ RESTRICT="strip fetch"
 # 423161
 QA_PREBUILT="opt/.*"
 
-S="${WORKDIR}/jdk1.8.0_20"
+S="${WORKDIR}/jdk1.8.0_45"
 
 src_install() {
 	local dest="/opt/${P}"
@@ -27,7 +27,7 @@ src_install() {
 
 	cp -pRP * "${ddest}" || die
 	insinto /usr/share/java-config-2/vm
-	newins "${FILESDIR}/${PN}-${SLOT}.20" "${PN}-${SLOT}"
+	newins "${FILESDIR}/${PN}-${SLOT}.45" "${PN}-${SLOT}"
 	dodir "/usr/lib/jvm"
 	dosym "/opt/${P}" "/usr/lib/jvm/${PN}-${SLOT}"
 }
