@@ -5,16 +5,15 @@ HOMEPAGE="http://www.gstreamer.org/"
 
 LICENSE="GPL-2"
 
-KEYWORDS="~amd64"
+KEYWORDS="amd64"
 SLOT="0.10"
 
-IUSE="a52dec alsa annodex assrender cdio cdparanoia dts dv dvb dvdread
-      faac faad ffmpeg flac fluendo gconf gio gl gnomevfs gsm jack
-      jpeg ladspa lame libmms libpng libvisual mad mimic modplug
-      mpeg2dec mpeg2enc mplex musepack mythtv neon ofa ogg oss pango
-      pulse raw1394 resindvd rtmp schroedinger shout2 sidplay
-      soundtouch soup speex taglib theora twolame v4l2 vorbis vp8
-      wavpack x x264 ximagesrc xvid xvideo"
+IUSE="a52dec alsa annodex assrender cdio cdparanoia dts dv dvb dvdread faac faad
+      ffmpeg flac gconf gio gl gnomevfs gsm jack jpeg ladspa lame libmms libpng
+      libvisual mad mimic modplug mpeg2dec mpeg2enc mplex musepack mythtv neon
+      ofa ogg oss pango pulse raw1394 resindvd rtmp schroedinger shout2 sidplay
+      soundtouch soup speex taglib theora twolame v4l2 vorbis vp8 wavpack x x264
+      ximagesrc xvid xvideo"
 
 RDEPEND="
 	a52dec? ( media-plugins/gst-plugins-a52dec:0.10 )
@@ -31,7 +30,6 @@ RDEPEND="
 	faad? ( media-plugins/gst-plugins-faad:0.10 )
 	ffmpeg? ( media-plugins/gst-plugins-ffmpeg:0.10 )
 	flac? ( media-plugins/gst-plugins-flac:0.10 )
-	fluendo? ( media-plugins/gst-plugins-fluendo:0.10 )
 	gconf? ( media-plugins/gst-plugins-gconf:0.10 )
 	gio? ( media-plugins/gst-plugins-gio:0.10 )
 	gl? ( media-plugins/gst-plugins-gl:0.10 )
