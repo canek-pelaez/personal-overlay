@@ -9,7 +9,7 @@ KEYWORDS="amd64"
 SLOT="1.0"
 
 IUSE="a52dec amr assrender cdio cdparanoia dash dts dvb dvdread dv faac faad
-      flac gdkpixbuf hls jack jpeg lame libav libmms libpng libvisual mad mimic
+      flac gdkpixbuf hls jack jpeg lame libav libmms libpng libvisual mad
       modplug mpeg2dec mpeg2enc mplex ofa opus oss pulse raw1394 resindvd rtmp
       schroedinger shout2 sidplay smoothstreaming soundtouch soup speex taglib
       twolame vaapi v4l2 voaacenc voamrwbenc vpx wavpack x264 ximagesrc"
@@ -39,7 +39,6 @@ RDEPEND="
 	libpng? ( media-plugins/gst-plugins-libpng:1.0 )
 	libvisual? ( media-plugins/gst-plugins-libvisual:1.0 )
 	mad? ( media-plugins/gst-plugins-mad:1.0 )
-	mimic? ( media-plugins/gst-plugins-mimic:1.0 )
 	modplug? ( media-plugins/gst-plugins-modplug:1.0 )
 	mpeg2dec? ( media-plugins/gst-plugins-mpeg2dec:1.0 )
 	mpeg2enc? ( media-plugins/gst-plugins-mpeg2enc:1.0 )
