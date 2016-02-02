@@ -10,8 +10,8 @@ SLOT="0.10"
 
 IUSE="a52dec alsa annodex assrender cdio cdparanoia dts dv dvb dvdread faac faad
       ffmpeg flac gconf gio gl gnomevfs gsm jack jpeg ladspa lame libmms libpng
-      libvisual mad mimic modplug mpeg2dec mpeg2enc mplex musepack mythtv neon
-      ofa ogg oss pango pulse raw1394 resindvd rtmp schroedinger shout2 sidplay
+      libvisual mad modplug mpeg2dec mpeg2enc mplex musepack mythtv neon ofa ogg
+      oss pango pulse raw1394 resindvd rtmp schroedinger shout2 sidplay
       soundtouch soup speex taglib theora twolame v4l2 vorbis vp8 wavpack x x264
       ximagesrc xvid xvideo"
 
@@ -43,7 +43,6 @@ RDEPEND="
 	libpng? ( media-plugins/gst-plugins-libpng:0.10 )
 	libvisual? ( media-plugins/gst-plugins-libvisual:0.10 )
 	mad? ( media-plugins/gst-plugins-mad:0.10 )
-	mimic? ( media-plugins/gst-plugins-mimic:0.10 )
 	modplug? ( media-plugins/gst-plugins-modplug:0.10 )
 	mpeg2dec? ( media-plugins/gst-plugins-mpeg2dec:0.10 )
 	mpeg2enc? ( media-plugins/gst-plugins-mpeg2enc:0.10 )
