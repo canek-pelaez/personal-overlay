@@ -5,7 +5,9 @@
 EAPI="5"
 GCONF_DEBUG="no"
 
-VALA_MIN_API_VERSION="0.24"
+VALA_MAX_API_VERSION="0.34"
+VALA_MIN_API_VERSION="0.32"
+VALA_USE_DEPEND="0.32"
 AUTOTOOLS_AUTORECONF="1"
 
 inherit gnome2-live vala
@@ -20,15 +22,19 @@ IUSE=""
 KEYWORDS="~amd64 ~x86"
 
 RDEPEND="
+	>=dev-lang/vala-0.32
 	>=dev-libs/glib-2.38:2
 	>=dev-libs/json-glib-1.0.2
 "
 DEPEND="${RDEPEND}
-	$(vala_depend)
         sys-devel/m4
 "
 
 src_prepare() {
 	gnome2-live_src_prepare
 	vala_src_prepare
+}
+
+src_compile() {
+	emake VALAC="$(type -p valac-0.32)"
 }
