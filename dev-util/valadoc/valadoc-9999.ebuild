@@ -5,13 +5,16 @@
 EAPI="5"
 GCONF_DEBUG="no"
 
-VALA_MIN_API_VERSION="0.28"
+VALA_MAX_API_VERSION="0.34"
+VALA_MIN_API_VERSION="0.32"
+VALA_USE_DEPEND="0.32"
 
 inherit gnome2-live vala
 
 DESCRIPTION="A documentation tool for Vala"
 HOMEPAGE="http://www.valadoc.org/"
 EGIT_REPO_URI="git://git.gnome.org/valadoc"
+EGIT_COMMIT="6d7ce8b5134804a6e4cb1ef0fcd0381f63364b14"
 
 LICENSE="GPL-3"
 SLOT="0"
@@ -19,7 +22,7 @@ IUSE=""
 KEYWORDS="~amd64 ~x86"
 
 RDEPEND="
-	>=dev-lang/vala-0.28
+	>=dev-lang/vala-0.32
 	dev-libs/libgee:0.8
 	>=media-gfx/graphviz-2.16
 	>=dev-libs/glib-2.24:2
@@ -27,7 +30,6 @@ RDEPEND="
 "
 
 DEPEND="${RDEPEND}
-	$(vala_depend)
         sys-devel/m4
 "
 src_prepare() {
@@ -36,6 +38,5 @@ src_prepare() {
 }
 
 src_compile() {
-	local valaver="$(vala_best_api_version)"
-	emake VALAC="$(type -p valac-${valaver})"
+	emake VALAC="$(type -p valac-0.32)"
 }
