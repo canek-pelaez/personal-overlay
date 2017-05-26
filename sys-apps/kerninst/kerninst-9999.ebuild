@@ -7,8 +7,8 @@ EAPI="5"
 inherit git-2
 
 DESCRIPTION="Kernel installator"
-HOMEPAGE="http://github.com/canek-pelaez/kerninst/"
-EGIT_REPO_URI="git://github.com/canek-pelaez/kerninst.git"
+HOMEPAGE="https://aztlan.fciencias.unam.mx/gitlab/canek/kerninst"
+EGIT_REPO_URI="https://canek@aztlan.fciencias.unam.mx/gitlab/canek/kerninst.git"
 
 LICENSE="GPL-3"
 SLOT="0"
