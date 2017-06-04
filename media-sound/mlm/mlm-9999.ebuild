@@ -5,11 +5,10 @@
 EAPI="5"
 GCONF_DEBUG="no"
 
-VALA_MAX_API_VERSION="0.34"
-VALA_MIN_API_VERSION="0.32"
-VALA_USE_DEPEND="0.32"
+VALA_MIN_API_VERSION=${VALA_MIN_API_VERSION:-0.32}
+VALA_MAX_API_VERSION=${VALA_MAX_API_VERSION:-0.34}
 
-inherit eutils gnome2-live vala
+inherit gnome2-utils git-r3 ninja-utils vala
 
 DESCRIPTION="Music Library Maintainer"
 HOMEPAGE="https://aztlan.fciencias.unam.mx/gitlab/canek/mlm"
@@ -21,27 +20,54 @@ IUSE=""
 KEYWORDS="~amd64 ~x86"
 
 RDEPEND="
-	>=dev-lang/vala-0.32
-	>=x11-libs/gtk+-3.2:3[X]
-	>=dev-libs/glib-2.30:2
+	>=x11-libs/gtk+-3.10:3[X]
+	>=dev-libs/glib-2.38:2
 	x11-libs/gdk-pixbuf:2[jpeg]
 	dev-libs/libgee:0.8
 	>=media-libs/libid3tag-0.15
 "
 DEPEND="${RDEPEND}
+	$(vala_depend)
         sys-devel/m4
 "
 
-src_prepare() {
-	gnome2-live_src_prepare
-	vala_src_prepare
-}
-
 src_configure() {
-	DOCS="AUTHORS README"
-	gnome2_src_configure
+	# Common args
+	local mesonargs=(
+		--buildtype plain
+		--libdir "$(get_libdir)"
+		--localstatedir "${EPREFIX}/var/lib"
+		--prefix "${EPREFIX}/usr"
+		--sysconfdir "${EPREFIX}/etc"
+	)
+
+	BUILD_DIR="${BUILD_DIR:-${WORKDIR}/${P}-build}"
+	set -- meson "${mesonargs[@]}" "$@" \
+		"${EMESON_SOURCE:-${S}}" "${BUILD_DIR}"
+	echo "$@"
+	"$@" || die
 }
 
 src_compile() {
-	emake VALAC="$(type -p valac-0.32)"
+	eninja -C "${BUILD_DIR}"
+}
+
+src_install() {
+	DESTDIR="${D}" eninja -C "${BUILD_DIR}" install
+	einstalldocs
+}
+
+pkg_preinst() {
+	gnome2_icon_savelist
+	gnome2_schemas_savelist
+}
+        
+pkg_postinst() {
+	gnome2_icon_cache_update
+	gnome2_schemas_update
+}
+
+pkg_postrm() {
+	gnome2_icon_cache_update
+	gnome2_schemas_update
 }
