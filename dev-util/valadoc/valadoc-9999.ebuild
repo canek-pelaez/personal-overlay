@@ -5,9 +5,8 @@
 EAPI="5"
 GCONF_DEBUG="no"
 
-VALA_MAX_API_VERSION="0.34"
-VALA_MIN_API_VERSION="0.32"
-VALA_USE_DEPEND="0.32"
+VALA_MIN_API_VERSION=${VALA_MIN_API_VERSION:-0.32}
+VALA_MAX_API_VERSION=${VALA_MAX_API_VERSION:-0.34}
 
 inherit gnome2-live vala
 
@@ -22,7 +21,6 @@ IUSE=""
 KEYWORDS="~amd64 ~x86"
 
 RDEPEND="
-	>=dev-lang/vala-0.32
 	dev-libs/libgee:0.8
 	>=media-gfx/graphviz-2.16
 	>=dev-libs/glib-2.24:2
@@ -30,6 +28,7 @@ RDEPEND="
 "
 
 DEPEND="${RDEPEND}
+	$(vala_depend)
         sys-devel/m4
 "
 src_prepare() {
@@ -38,5 +37,6 @@ src_prepare() {
 }
 
 src_compile() {
-	emake VALAC="$(type -p valac-0.32)"
+	local valaver="$(vala_best_api_version)"
+	emake VALAC="$(type -p valac-${valaver})"
 }
