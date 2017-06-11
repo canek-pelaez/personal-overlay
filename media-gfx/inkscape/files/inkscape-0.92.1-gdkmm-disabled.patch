@@ -1,0 +1,56 @@
+diff -bur inkscape-0.92.1.orig/src/desktop-events.cpp inkscape-0.92.1.new/src/desktop-events.cpp
+--- inkscape-0.92.1.orig/src/desktop-events.cpp	2017-02-13 17:46:57.000000000 -0600
++++ inkscape-0.92.1.new/src/desktop-events.cpp	2017-06-11 10:42:40.565841160 -0500
+@@ -12,6 +12,10 @@
+  * Released under GNU GPL, read the file 'COPYING' for more information
+  */
+ 
++#ifdef GDKMM_DISABLE_DEPRECATED
++# undef GDKMM_DISABLE_DEPRECATED
++#endif
++
+ #ifdef HAVE_CONFIG_H
+ # include <config.h>
+ #endif
+diff -bur inkscape-0.92.1.orig/src/device-manager.cpp inkscape-0.92.1.new/src/device-manager.cpp
+--- inkscape-0.92.1.orig/src/device-manager.cpp	2017-02-13 17:46:57.000000000 -0600
++++ inkscape-0.92.1.new/src/device-manager.cpp	2017-06-11 10:43:50.227113385 -0500
+@@ -7,6 +7,10 @@
+  * Released under GNU GPL, read the file 'COPYING' for more information
+  */
+ 
++#ifdef GDKMM_DISABLE_DEPRECATED
++# undef GDKMM_DISABLE_DEPRECATED
++#endif
++
+ #include "device-manager.h"
+ #include <map>
+ #include <set>
+diff -bur inkscape-0.92.1.orig/src/ui/dialog/filter-effects-dialog.cpp inkscape-0.92.1.new/src/ui/dialog/filter-effects-dialog.cpp
+--- inkscape-0.92.1.orig/src/ui/dialog/filter-effects-dialog.cpp	2017-02-13 17:46:57.000000000 -0600
++++ inkscape-0.92.1.new/src/ui/dialog/filter-effects-dialog.cpp	2017-06-11 10:45:38.747670520 -0500
+@@ -15,6 +15,10 @@
+  * Released under GNU GPL.  Read the file 'COPYING' for more information.
+  */
+ 
++#ifdef GDKMM_DISABLE_DEPRECATED
++# undef GDKMM_DISABLE_DEPRECATED
++#endif
++
+ #ifdef HAVE_CONFIG_H
+ # include <config.h>
+ #endif
+diff -bur inkscape-0.92.1.orig/src/ui/dialog/svg-fonts-dialog.cpp inkscape-0.92.1.new/src/ui/dialog/svg-fonts-dialog.cpp
+--- inkscape-0.92.1.orig/src/ui/dialog/svg-fonts-dialog.cpp	2017-02-13 17:46:57.000000000 -0600
++++ inkscape-0.92.1.new/src/ui/dialog/svg-fonts-dialog.cpp	2017-06-11 10:47:22.457483832 -0500
+@@ -11,6 +11,10 @@
+  * Released under GNU GPLv2 (or later).  Read the file 'COPYING' for more information.
+  */
+ 
++#ifdef GDKMM_DISABLE_DEPRECATED
++# undef GDKMM_DISABLE_DEPRECATED
++#endif
++
+ #ifdef HAVE_CONFIG_H
+ # include <config.h>
+ #endif
