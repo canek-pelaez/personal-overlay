@@ -10,7 +10,8 @@ inherit cmake-utils git-r3
 DESCRIPTION="Solvespace is a parametric 3D CAD program"
 HOMEPAGE="http://solvespace.com/index.pl"
 EGIT_REPO_URI="https://github.com/solvespace/solvespace.git"
-EGIT_COMMIT="v2.3"
+EGIT_BRANCH="2.x"
+EGIT_COMMIT="7c2417ab735cf05960939647a2a016fb51f88135"
 
 LICENSE="GPL-3"
 SLOT="0"
