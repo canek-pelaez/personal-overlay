@@ -21,7 +21,6 @@ src_install() {
 	doexe kerninst
 	dosym /usr/bin/kerninst /usr/bin/kerninst-compile
 	dosym /usr/bin/kerninst /usr/bin/kerninst-install
-	dosym /usr/bin/kerninst /usr/bin/kerninst-intel-ucode
 	dosym /usr/bin/kerninst /usr/bin/kerninst-mkinitrd
 	dosym /usr/bin/kerninst /usr/bin/kerninst-updatebm
 	dosym /usr/bin/kerninst /usr/bin/kerninst-clean
