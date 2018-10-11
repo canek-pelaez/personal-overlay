@@ -21,5 +21,5 @@ src_install() {
 	doexe monitor-vpn
 	insinto /etc/monitor-vpn
 	doins monitor-vpn.conf
-	dodoc README AUTHORS
+	dodoc README.md AUTHORS
 }
