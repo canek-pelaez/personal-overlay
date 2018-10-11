@@ -21,6 +21,6 @@ src_install() {
 	doexe monitor-vpn
 	insinto /etc/monitor-vpn
 	doins monitor-vpn.conf
-        systemd_newunit ${PN}.service
+        systemd_newunit ${PN}.service ${PN}.service
 	dodoc README.md AUTHORS
 }
