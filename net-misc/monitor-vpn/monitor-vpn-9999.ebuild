@@ -4,7 +4,7 @@
 
 EAPI="5"
 
-inherit git-2
+inherit git-2 systemd
 
 DESCRIPTION="Monitor VPN"
 HOMEPAGE="https://aztlan.fciencias.unam.mx/gitlab/canek/monitor-vpn"
@@ -21,5 +21,6 @@ src_install() {
 	doexe monitor-vpn
 	insinto /etc/monitor-vpn
 	doins monitor-vpn.conf
+        systemd_newunit ${PN}.service
 	dodoc README.md AUTHORS
 }
