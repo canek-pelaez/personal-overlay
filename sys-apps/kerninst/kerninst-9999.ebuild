@@ -26,5 +26,5 @@ src_install() {
 	dosym /usr/bin/kerninst /usr/bin/kerninst-clean
 	insinto /etc/kerninst
 	doins kerninst.conf
-	dodoc README COPYING AUTHORS
+	dodoc README.md COPYING AUTHORS
 }
