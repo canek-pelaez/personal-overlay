@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE repositories SYSTEM "/dtd/repositories.dtd">
+<repositories xmlns="" version="1.0">
+  <repo priority="99" quality="experimental" status="unofficial">
+    <name><![CDATA[personal-overlay]]></name>
+    <description lang="en"><![CDATA[This overlay contains ebuilds for some packages (some of them written by me).]]></description>
+    <homepage>https://aztlan.fciencias.unam.mx/gitlab/canek/personal-overlay</homepage>
+    <owner type="person">
+      <email>canek@ciencias.unam.mx</email>
+      <name><![CDATA[Canek Peláez Valdés]]></name>
+    </owner>
+    <source type="git">https://aztlan.fciencias.unam.mx/gitlab/canek/personal-overlay.git</source>
+    <feed>https://aztlan.fciencias.unam.mx/gitlab/canek/personal-overlay/commits/master.atom</feed>
+  </repo>
+</repositories>
