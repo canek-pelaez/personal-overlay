@@ -1,8 +1,6 @@
-# Copyright 1999-2017 Gentoo Foundation
+# Copyright 1999-2015 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Id$
 
-#
 # @ECLASS: gnome2-live.eclass
 # @MAINTAINER:
 # gnome@gentoo.org
@@ -12,9 +10,8 @@
 # @DESCRIPTION:
 # Exports additional functions used by live ebuilds written for GNOME packages
 # Always to be imported *AFTER* gnome2.eclass
-#
 
-inherit eutils gnome2 gnome2-utils libtool git-r3 xdg
+inherit autotools eutils gnome2 gnome2-utils libtool git-r3 xdg
 
 EXPORTED_FUNCTIONS=" "
 case "${EAPI:-0}" in
@@ -53,7 +50,7 @@ ELTCONF=${ELTCONF:-}
 # @ECLASS-VARIABLE: EGIT_REPO_URI
 # @DESCRIPTION:
 # git URI for the project, uses GNOME_LIVE_MODULE by default
-: "${EGIT_REPO_URI:="https://git.gnome.org/browse/${GNOME_LIVE_MODULE}"}"
+: "${EGIT_REPO_URI:="git://git.gnome.org/${GNOME_LIVE_MODULE}"}"
 
 # @ECLASS-VARIABLE: PATCHES
 # @DESCRIPTION:
@@ -113,6 +110,9 @@ gnome2-live_src_prepare() {
 
 	xdg_src_prepare
 
+	# eautoreconf is smart enough to run all necessary commands
+	eautoreconf
+
 	# Prevent assorted access violations and test failures
 	gnome2_environment_reset
 
@@ -121,6 +121,10 @@ gnome2-live_src_prepare() {
 	# rarian are not running anything and, then, access violations
 	# shouldn't occur.
 	has ${EAPI:-0} 4 5 && gnome2_omf_fix
+
+	# Run libtoolize
+	# https://bugzilla.gnome.org/show_bug.cgi?id=655517
+	elibtoolize ${ELTCONF}
 }
 
 # @FUNCTION: gnome2_src_unpack
