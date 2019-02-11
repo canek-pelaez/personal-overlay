@@ -1,14 +1,12 @@
 # Copyright 2017 Canek Peláez
 # Distributed under the terms of the GNU General Public License v2
-# $Header: $
 
-EAPI="5"
-GCONF_DEBUG="no"
+EAPI=6
 
-VALA_MIN_API_VERSION=${VALA_MIN_API_VERSION:-0.34}
+VALA_MIN_API_VERSION=${VALA_MIN_API_VERSION:-0.32}
 VALA_MAX_API_VERSION=${VALA_MAX_API_VERSION:-0.34}
 
-inherit git-r3 ninja-utils vala
+inherit git-r3 meson vala
 
 DESCRIPTION="PDF marks"
 HOMEPAGE="https://aztlan.fciencias.unam.mx/gitlab/canek/pdfmarks"
@@ -26,31 +24,18 @@ RDEPEND="
 "
 DEPEND="${RDEPEND}
 	$(vala_depend)
-        sys-devel/m4
+	sys-devel/m4
 "
 
-src_configure() {
-	# Common args
-	local mesonargs=(
-		--buildtype plain
-		--libdir "$(get_libdir)"
-		--localstatedir "${EPREFIX}/var/lib"
-		--prefix "${EPREFIX}/usr"
-		--sysconfdir "${EPREFIX}/etc"
-	)
-
-	BUILD_DIR="${BUILD_DIR:-${WORKDIR}/${P}-build}"
-	set -- meson "${mesonargs[@]}" "$@" \
-		"${EMESON_SOURCE:-${S}}" "${BUILD_DIR}"
-	echo "$@"
-	"$@" || die
+src_prepare() {
+	default
+	vala_src_prepare
 }
-                                
-src_compile() {
-	eninja -C "${BUILD_DIR}"
+
+src_configure() {
+	meson_src_configure
 }
 
 src_install() {
-	DESTDIR="${D}" eninja -C "${BUILD_DIR}" install
-	einstalldocs
+	meson_src_install
 }
