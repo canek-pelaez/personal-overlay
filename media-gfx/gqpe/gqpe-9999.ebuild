@@ -22,7 +22,8 @@ RDEPEND="
 	>=dev-libs/glib-2.38:2
 	x11-libs/gdk-pixbuf:2[jpeg]
 	dev-libs/libgee:0.8
-	>=media-libs/gexiv2-0.5:0
+        media-libs/libchamplain:0.12
+	>=media-libs/gexiv2-0.10:0
 "
 DEPEND="${RDEPEND}
 	$(vala_depend)
