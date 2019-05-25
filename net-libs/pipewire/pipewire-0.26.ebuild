@@ -32,7 +32,6 @@ RDEPEND="
 "
 DEPEND="
 	${RDEPEND}
-	sys-devel/m4
 "
 
 src_configure() {
