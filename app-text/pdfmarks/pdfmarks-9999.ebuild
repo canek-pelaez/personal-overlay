@@ -3,8 +3,8 @@
 
 EAPI=6
 
-VALA_MIN_API_VERSION=${VALA_MIN_API_VERSION:-0.32}
-VALA_MAX_API_VERSION=${VALA_MAX_API_VERSION:-0.34}
+VALA_MIN_API_VERSION=${VALA_MIN_API_VERSION:-0.40}
+VALA_MAX_API_VERSION=${VALA_MAX_API_VERSION:-0.42}
 
 inherit git-r3 meson vala
 
@@ -24,7 +24,6 @@ RDEPEND="
 "
 DEPEND="${RDEPEND}
 	$(vala_depend)
-	sys-devel/m4
 "
 
 src_prepare() {
