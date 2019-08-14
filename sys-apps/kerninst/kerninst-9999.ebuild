@@ -1,8 +1,8 @@
-# Copyright 2013 Canek Peláez
+# Copyright 2013-2019 Canek Peláez
 # Distributed under the terms of the GNU General Public License v3
 # $Header: $
 
-EAPI="5"
+EAPI="6"
 
 inherit git-2
 
@@ -22,6 +22,7 @@ src_install() {
 	dosym /usr/bin/kerninst /usr/bin/kerninst-compile
 	dosym /usr/bin/kerninst /usr/bin/kerninst-install
 	dosym /usr/bin/kerninst /usr/bin/kerninst-mkinitrd
+	dosym /usr/bin/kerninst /usr/bin/kerninst-newconfig
 	dosym /usr/bin/kerninst /usr/bin/kerninst-updatebm
 	dosym /usr/bin/kerninst /usr/bin/kerninst-clean
 	insinto /etc/kerninst
