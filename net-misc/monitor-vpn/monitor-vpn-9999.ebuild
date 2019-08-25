@@ -2,9 +2,9 @@
 # Distributed under the terms of the GNU General Public License v3
 # $Header: $
 
-EAPI="5"
+EAPI="6"
 
-inherit git-2 systemd
+inherit git-r3 systemd
 
 DESCRIPTION="Monitor VPN"
 HOMEPAGE="https://aztlan.fciencias.unam.mx/gitlab/canek/monitor-vpn"
