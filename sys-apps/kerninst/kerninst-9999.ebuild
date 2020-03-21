@@ -1,4 +1,4 @@
-# Copyright 2013-2019 Canek Peláez
+# Copyright 2013-2020 Canek Peláez
 # Distributed under the terms of the GNU General Public License v3
 # $Header: $
 
