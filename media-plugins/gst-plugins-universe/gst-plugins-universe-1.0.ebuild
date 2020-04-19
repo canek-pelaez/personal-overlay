@@ -8,12 +8,12 @@ LICENSE="GPL-2"
 KEYWORDS="amd64"
 SLOT="1.0"
 
-IUSE="a52dec amr assrender cdio cdparanoia dash dts dvb dvdread dv faac faad
-      flac gdkpixbuf hls jack jpeg lame libav libmms libpng libvisual mad
-      modplug mpeg2dec mpeg2enc mplex ofa openh264 opus oss pulse raw1394
-      resindvd rtmp schroedinger shout2 sidplay smoothstreaming soundtouch soup
-      speex taglib twolame vaapi v4l2 voaacenc voamrwbenc vpx wavpack x264 x265
-      ximagesrc"
+IUSE="a52dec amr assrender cdio cdparanoia dash dts dvb dvdread dv faac
+	  faad flac gdkpixbuf hls jack jpeg lame libav libmms libpng
+	  libvisual mad modplug mpeg2dec mpeg2enc mplex ofa openh264 opus
+	  oss pulse raw1394 resindvd rtmp schroedinger shout2 sidplay
+	  smoothstreaming soundtouch soup speex taglib twolame uvch264
+	  vaapi v4l2 voaacenc voamrwbenc vpx wavpack x264 x265 ximagesrc"
 
 RDEPEND="
 	ximagesrc? ( media-plugins/gst-plugins-ximagesrc:1.0 )
@@ -46,7 +46,7 @@ RDEPEND="
 	mplex? ( media-plugins/gst-plugins-mplex:1.0 )
 	neon? ( media-plugins/gst-plugins-neon:1.0 )
 	ofa? ( media-plugins/gst-plugins-ofa:1.0 )
-        openh264? ( media-plugins/gst-plugins-openh264:1.0 )
+	openh264? ( media-plugins/gst-plugins-openh264:1.0 )
 	opus?  ( media-plugins/gst-plugins-opus:1.0 )
 	oss? ( media-plugins/gst-plugins-oss:1.0 )
 	pulse? ( media-plugins/gst-plugins-pulse:1.0 )
@@ -62,6 +62,7 @@ RDEPEND="
 	speex? ( media-plugins/gst-plugins-speex:1.0 )
 	taglib? ( media-plugins/gst-plugins-taglib:1.0 )
 	twolame? ( media-plugins/gst-plugins-twolame:1.0 )
+	uvch264? ( media-plugins/gst-plugins-uvch264:1.0 )
 	v4l2? ( media-plugins/gst-plugins-v4l2:1.0 )
 	vaapi? ( media-plugins/gst-plugins-vaapi:1.0 )
 	voaacenc? ( media-plugins/gst-plugins-voaacenc:1.0 )
