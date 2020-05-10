@@ -9,11 +9,11 @@ KEYWORDS="amd64"
 SLOT="1.0"
 
 IUSE="a52dec amr assrender cdio cdparanoia dash dts dvb dvdread dv faac
-	  faad flac gdkpixbuf hls jack jpeg lame libmms libpng libvisual mad
-	  modplug mpeg2dec mpeg2enc mplex ofa openh264 opus oss pulse
-	  raw1394 resindvd rtmp schroedinger shout2 sidplay smoothstreaming
-	  soundtouch soup speex taglib twolame uvch264 vaapi v4l2 voaacenc
-	  voamrwbenc vpx wavpack x264 x265 ximagesrc"
+	  faad ffmpeg flac gdkpixbuf hls jack jpeg lame libmms libpng
+	  libvisual mad modplug mpeg2dec mpeg2enc mplex ofa openh264 opus
+	  oss pulse raw1394 resindvd rtmp schroedinger shout2 sidplay
+	  smoothstreaming soundtouch soup speex taglib twolame uvch264 vaapi
+	  v4l2 voaacenc voamrwbenc vpx wavpack x264 x265 ximagesrc"
 
 RDEPEND="
 	ximagesrc? ( media-plugins/gst-plugins-ximagesrc:1.0 )
@@ -29,6 +29,7 @@ RDEPEND="
 	dv? ( media-plugins/gst-plugins-dv:1.0 )
 	faac? ( media-plugins/gst-plugins-faac:1.0 )
 	faad? ( media-plugins/gst-plugins-faad:1.0 )
+	ffmpeg? ( media-plugins/gst-plugins-ffmpeg:1.0 )
 	flac? ( media-plugins/gst-plugins-flac:1.0 )
 	gdkpixbuf? ( media-plugins/gst-plugins-gdkpixbuf:1.0 )
 	hls? ( media-plugins/gst-plugins-hls:1.0 )
