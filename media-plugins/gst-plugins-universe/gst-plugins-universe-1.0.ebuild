@@ -29,7 +29,7 @@ RDEPEND="
 	dv? ( media-plugins/gst-plugins-dv:1.0 )
 	faac? ( media-plugins/gst-plugins-faac:1.0 )
 	faad? ( media-plugins/gst-plugins-faad:1.0 )
-	ffmpeg? ( media-plugins/gst-plugins-ffmpeg:1.0 )
+	ffmpeg? ( media-plugins/gst-plugins-libav:1.0 )
 	flac? ( media-plugins/gst-plugins-flac:1.0 )
 	gdkpixbuf? ( media-plugins/gst-plugins-gdkpixbuf:1.0 )
 	hls? ( media-plugins/gst-plugins-hls:1.0 )
