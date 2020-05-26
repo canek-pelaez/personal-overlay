@@ -1,6 +1,5 @@
 # Copyright 2013-2020 Canek Peláez
 # Distributed under the terms of the GNU General Public License v3
-# $Header: $
 
 EAPI="6"
 
@@ -13,8 +12,18 @@ EGIT_REPO_URI="https://canek@aztlan.fciencias.unam.mx/gitlab/canek/kerninst.git"
 LICENSE="GPL-3"
 SLOT="0"
 KEYWORDS="~amd64 ~x86"
+IUSE="dracut"
 
-RDEPENDS="sys-kernel/dracut"
+RDEPENDS="
+	app-shells/bash
+	sys-apps/coreutils
+	sys-apps/grep
+	sys-apps/portage
+	sys-apps/util-linux
+	sys-devel/binutils
+	sys-devel/make
+	dracut? ( sys-kernel/dracut )
+"
 
 src_install() {
 	exeinto /usr/bin
