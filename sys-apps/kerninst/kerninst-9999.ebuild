@@ -36,5 +36,6 @@ src_install() {
 	dosym /usr/bin/kerninst /usr/bin/kerninst-clean
 	insinto /etc/kerninst
 	doins kerninst.conf
+	doins splash.bmp
 	dodoc README.md COPYING AUTHORS
 }
