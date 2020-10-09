@@ -3,15 +3,15 @@
 
 EAPI="6"
 
-VALA_MIN_API_VERSION=${VALA_MIN_API_VERSION:-0.44}
-VALA_MAX_API_VERSION=${VALA_MAX_API_VERSION:-0.44}
+VALA_MIN_API_VERSION=${VALA_MIN_API_VERSION:-0.48}
+VALA_MAX_API_VERSION=${VALA_MAX_API_VERSION:-0.48}
 
 inherit git-r3 gnome2-utils meson vala
 
 DESCRIPTION="GNOME Vala Language Server"
 HOMEPAGE="https://gitlab.gnome.org/esodan/gvls"
 EGIT_REPO_URI="https://gitlab.gnome.org/esodan/gvls.git"
-EGIT_COMMIT="gvls-0.14.4"
+EGIT_COMMIT="gvls-0.16.0"
 
 LICENSE="GPL-3"
 SLOT="0"
