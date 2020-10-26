@@ -3,7 +3,7 @@
 
 EAPI="6"
 
-inherit git-r3
+inherit git-r3 bash-completion-r1
 
 DESCRIPTION="Kernel installator"
 HOMEPAGE="https://aztlan.fciencias.unam.mx/gitlab/canek/kerninst"
@@ -38,5 +38,6 @@ src_install() {
 	insinto /etc/kerninst
 	doins kerninst.conf
 	doins splash.bmp
+	newbashcomp kerninst-completion.bash ${PN}
 	dodoc README.md COPYING AUTHORS
 }
