@@ -3,7 +3,7 @@
 
 EAPI=6
 
-PYTHON_COMPAT=( python3_7 )
+PYTHON_COMPAT=( python3_7 python 3_8 )
 
 inherit git-r3 distutils-r1 systemd
 
