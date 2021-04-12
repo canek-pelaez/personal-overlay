@@ -2,7 +2,7 @@
 # Distributed under the terms of the GNU General Public License v2
 
 EAPI=5
-inherit eutils flag-o-matic toolchain-funcs games
+inherit eutils flag-o-matic toolchain-funcs
 
 MY_PN="ioquake3"
 MY_PV="${PV}"
@@ -101,22 +101,19 @@ src_install() {
 		make_desktop_entry quake3 "Quake III Arena"
 	fi
 
+	into /usr/bin
 	cd build/release-$(my_platform)-$(my_arch) || die
 	local exe target
 	for exe in {ioquake3,ioquake3-smp,ioq3ded}.$(my_arch) ; do
 		if [[ -x ${exe} ]] ; then
 			target=${exe%.*}
-			newgamesbin ${exe} ${target}
-			dosym ${target} "${GAMES_BINDIR}/${target/io}"
+			newbin ${exe} ${target}
+			dosym ${target} "/usr/bin/${target/io}"
 		fi
 	done
-
-	prepgamesdirs
 }
 
 pkg_postinst() {
-	games_pkg_postinst
-
 	ewarn "The source version of Quake III Arena will not work with PunkBuster."
 	ewarn "If you need PB support, then use the games-fps/quake3-bin package."
 }

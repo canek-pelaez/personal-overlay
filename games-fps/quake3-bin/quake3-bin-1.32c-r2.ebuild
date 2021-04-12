@@ -2,7 +2,7 @@
 # Distributed under the terms of the GNU General Public License v2
 
 EAPI=5
-inherit eutils unpacker games
+inherit eutils unpacker
 
 DESCRIPTION="3rd installment of the classic id 3D first-person shooter"
 HOMEPAGE="http://www.idsoftware.com/"
@@ -31,7 +31,7 @@ RDEPEND="sys-libs/glibc
 
 S=${WORKDIR}
 
-dir=${GAMES_PREFIX_OPT}/quake3
+dir=/opt/quake3
 Ddir=${D}/${dir}
 
 QA_TEXTRELS="${dir:1}/pb/pbag.so
@@ -46,12 +46,12 @@ src_unpack() {
 src_install() {
 	dodir "${dir}"/{baseq3,missionpack}
 	if use cdinstall ; then
-		dosym "${GAMES_DATADIR}"/quake3/baseq3/pak0.pk3 "${dir}"/baseq3/pak0.pk3
-		use teamarena && dosym "${GAMES_DATADIR}"/quake3/missionpack/pak0.pk3 \
+		dosym /opt/quake3/baseq3/pak0.pk3 "${dir}"/baseq3/pak0.pk3
+		use teamarena && dosym /opt/quake3/missionpack/pak0.pk3 \
 			"${dir}"/missionpack/pak0.pk3
 	fi
 	for pk3 in baseq3/*.pk3 missionpack/*.pk3 ; do
-		dosym "${GAMES_DATADIR}"/quake3/${pk3} "${dir}"/${pk3}
+		dosym /opt/quake3/${pk3} "${dir}"/${pk3}
 	done
 
 	insinto "${dir}"
@@ -75,12 +75,9 @@ src_install() {
 	games_make_wrapper quake3-ded ./q3ded "${dir}" "${dir}"
 	newinitd "${FILESDIR}"/q3ded.rc quake3-ded
 	newconfd "${FILESDIR}"/q3ded.conf.d quake3-ded
-
-	prepgamesdirs
 }
 
 pkg_postinst() {
-	games_pkg_postinst
 	ewarn "There are two possible security bugs in this package, both causing a"
 	ewarn "denial of service. One affects the game when running a server, the"
 	ewarn "other when running as a client."
@@ -95,7 +92,7 @@ pkg_postinst() {
 	elog "To start a dedicated server, run"
 	elog "  /etc/init.d/quake3-ded start"
 	elog
-	elog "The dedicated server is started under the ${GAMES_USER_DED} user account."
+	elog "The dedicated server is started under the games user account."
 
 	# IA32 Emulation required for amd64
 	if use amd64 ; then

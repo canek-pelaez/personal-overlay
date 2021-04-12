@@ -3,7 +3,7 @@
 
 EAPI=5
 CDROM_OPTIONAL="yes"
-inherit eutils unpacker cdrom games
+inherit eutils unpacker cdrom
 
 DESCRIPTION="Quake III Arena - data portion"
 HOMEPAGE="http://icculus.org/quake3/"
@@ -16,7 +16,7 @@ IUSE=""
 RESTRICT="bindist"
 
 S=${WORKDIR}
-dir=${GAMES_DATADIR}/quake3
+dir=/opt/quake3
 
 src_unpack() {
 	use cdinstall && cdrom_get_cds baseq3/pak0.pk3:Quake3/baseq3/pak0.pk3
@@ -25,7 +25,7 @@ src_unpack() {
 
 src_install() {
 	ebegin "Copying files from linux client ..."
-	insinto "${GAMES_DATADIR}"/quake3/baseq3
+	insinto /usr/share/games/quake3/baseq3
 	doins baseq3/*.pk3
 	eend 0
 
@@ -36,12 +36,9 @@ src_install() {
 	fi
 
 	find "${D}" -exec touch '{}' \;
-
-	prepgamesdirs
 }
 
 pkg_postinst() {
-	games_pkg_postinst
 	if ! use cdinstall ; then
 		echo
 		elog "You need to copy pak0.pk3 from your Quake3 CD into:"
