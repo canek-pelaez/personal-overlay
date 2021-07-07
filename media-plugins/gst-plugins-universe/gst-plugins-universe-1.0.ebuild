@@ -1,4 +1,4 @@
-EAPI="4"
+EAPI="7"
 
 DESCRIPTION="Meta package for all the GStreamer Plugins"
 HOMEPAGE="http://www.gstreamer.org/"
