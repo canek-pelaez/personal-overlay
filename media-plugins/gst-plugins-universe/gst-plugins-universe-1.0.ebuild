@@ -10,10 +10,11 @@ SLOT="1.0"
 
 IUSE="a52dec amr assrender cdio cdparanoia dash dts dvb dvdread dv faac
 	  faad ffmpeg flac gdkpixbuf gtk hls jack jpeg lame libde265 libmms
-	  libpng libvisual mad modplug mpeg2dec mpeg2enc mplex ofa openh264
-	  opus oss pulse raw1394 resindvd rtmp schroedinger shout2 sidplay
-	  smoothstreaming soundtouch soup speex taglib twolame uvch264 vaapi
-	  v4l2 voaacenc voamrwbenc vpx wavpack x264 x265 ximagesrc"
+	  libpng libvisual mad modplug mpeg2dec mpeg2enc mplex neon ofa
+	  openh264 opus oss pulse raw1394 resindvd rtmp schroedinger shout2
+	  sidplay smoothstreaming soundtouch soup speex taglib twolame
+	  uvch264 vaapi v4l2 voaacenc voamrwbenc vpx wavpack x264 x265
+	  ximagesrc"
 
 RDEPEND="
 	ximagesrc? ( media-plugins/gst-plugins-ximagesrc:1.0 )
@@ -37,7 +38,7 @@ RDEPEND="
 	jack? ( media-plugins/gst-plugins-jack:1.0 )
 	jpeg? ( media-plugins/gst-plugins-jpeg:1.0 )
 	lame? ( media-plugins/gst-plugins-lame:1.0 )
-	libde265 ( media-plugins/gst-plugins-libde265:1.0 )
+	libde265? ( media-plugins/gst-plugins-libde265:1.0 )
 	libmms? ( media-plugins/gst-plugins-libmms:1.0 )
 	libpng? ( media-plugins/gst-plugins-libpng:1.0 )
 	libvisual? ( media-plugins/gst-plugins-libvisual:1.0 )
