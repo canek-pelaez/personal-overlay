@@ -3,14 +3,14 @@
 
 EAPI="6"
 
-VALA_MIN_API_VERSION=${VALA_MIN_API_VERSION:-0.40}
-VALA_MAX_API_VERSION=${VALA_MAX_API_VERSION:-0.42}
+VALA_MIN_API_VERSION=${VALA_MIN_API_VERSION:-0.46}
 
 inherit git-r3 gnome2-utils meson vala
 
 DESCRIPTION="Music Library Maintainer"
 HOMEPAGE="https://aztlan.fciencias.unam.mx/gitlab/canek/mlm"
 EGIT_REPO_URI="https://canek@aztlan.fciencias.unam.mx/gitlab/canek/mlm.git"
+EGIT_BRANCH="main"
 
 LICENSE="GPL-3"
 SLOT="0"
