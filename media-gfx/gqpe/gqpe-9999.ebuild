@@ -3,8 +3,7 @@
 
 EAPI="6"
 
-VALA_MIN_API_VERSION=${VALA_MIN_API_VERSION:-0.40}
-VALA_MAX_API_VERSION=${VALA_MAX_API_VERSION:-0.42}
+VALA_MIN_API_VERSION=${VALA_MIN_API_VERSION:-0.46}
 
 inherit git-r3 gnome2-utils meson vala
 
@@ -22,7 +21,7 @@ RDEPEND="
 	>=dev-libs/glib-2.38:2
 	x11-libs/gdk-pixbuf:2[jpeg]
 	dev-libs/libgee:0.8
-        media-libs/libchamplain:0.12
+		media-libs/libchamplain:0.12
 	>=media-libs/gexiv2-0.10:0
 "
 DEPEND="${RDEPEND}
