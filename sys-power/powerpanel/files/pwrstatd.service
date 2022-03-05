@@ -1,0 +1,9 @@
+[Unit]
+Description=The monitor UPS software.
+After=network.target network-online.target nss-lookup.target
+
+[Service]
+ExecStart=/usr/sbin/pwrstatd
+
+[Install]
+WantedBy=multi-user.target
