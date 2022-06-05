@@ -4,7 +4,7 @@
 
 EAPI="6"
 
-inherit git-r3 systemd
+inherit git-r3 meson systemd
 
 DESCRIPTION="Monitor VPN"
 HOMEPAGE="https://aztlan.fciencias.unam.mx/gitlab/canek/monitor-vpn"
@@ -15,12 +15,3 @@ SLOT="0"
 KEYWORDS="~amd64 ~x86"
 
 RDEPENDS="net-misc/monitor-vpn"
-
-src_install() {
-	exeinto /usr/bin
-	doexe monitor-vpn
-	insinto /etc/monitor-vpn
-	doins monitor-vpn.conf
-        systemd_newunit ${PN}.service ${PN}.service
-	dodoc README.md AUTHORS
-}
