@@ -1,10 +1,10 @@
 # Copyright 2017 Canek Peláez
 # Distributed under the terms of the GNU General Public License v2
 
-EAPI="6"
+EAPI="7"
 
-VALA_MIN_API_VERSION=${VALA_MIN_API_VERSION:-0.40}
-VALA_MAX_API_VERSION=${VALA_MAX_API_VERSION:-0.42}
+VALA_MIN_API_VERSION=${VALA_MIN_API_VERSION:-0.50}
+VALA_MAX_API_VERSION=${VALA_MAX_API_VERSION:-0.56}
 
 inherit git-r3 meson vala
 
