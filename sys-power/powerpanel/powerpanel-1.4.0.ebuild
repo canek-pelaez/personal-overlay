@@ -16,7 +16,7 @@ KEYWORDS="~amd64 ~x86"
 
 RDEPEND="
 	dev-libs/openssl:0/1.1
-	=dev-libs/json-c-0.15
+	>=dev-libs/json-c-0.15
 "
 DEPEND="${RDEPEND}"
 
@@ -30,6 +30,7 @@ src_install() {
 	doins script/pwrstatd-email.sh
 	doins script/shutdown.sh
 	doins script/hibernate.sh
+	find "${ED}/etc" -name "*.sh" -exec chmod ug+rwx,go+rx-w '{}' \; || die
 	doins mqttcert/pwrstatd.cacrt
 	doins mqttcert/pwrstatd.ccrt
 	doins mqttcert/pwrstatd.ckey
