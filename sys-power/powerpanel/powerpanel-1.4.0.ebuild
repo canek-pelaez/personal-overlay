@@ -15,7 +15,7 @@ IUSE=""
 KEYWORDS="~amd64 ~x86"
 
 RDEPEND="
-	dev-libs/openssl:0/1.1
+	dev-libs/openssl-compat:1.1.1
 	>=dev-libs/json-c-0.15
 "
 DEPEND="${RDEPEND}"
