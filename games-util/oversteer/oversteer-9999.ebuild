@@ -17,5 +17,8 @@ SLOT="0"
 IUSE=""
 KEYWORDS="~amd64 ~x86"
 
-RDEPEND="dev-python/scipy"
+RDEPEND="
+	dev-python/scipy
+	dev-python/pyxdg
+"
 DEPEND="${RDEPEND}"
