@@ -20,5 +20,6 @@ KEYWORDS="~amd64 ~x86"
 RDEPEND="
 	dev-python/scipy
 	dev-python/pyxdg
+	dev-python/matplotlib
 "
 DEPEND="${RDEPEND}"
