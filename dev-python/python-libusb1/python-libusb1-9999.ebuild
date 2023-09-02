@@ -9,7 +9,7 @@ inherit git-r3 distutils-r1
 
 DESCRIPTION="Pure-python wrapper for libusb-1.0."
 HOMEPAGE="https://pypi.org/project/libusb1/"
-EGIT_REPO_URI="http://github.com/vpelletier/python-libusb1.git"
+EGIT_REPO_URI="https://github.com/vpelletier/python-libusb1.git"
 
 LICENSE="LGPL-2+"
 SLOT="0"
