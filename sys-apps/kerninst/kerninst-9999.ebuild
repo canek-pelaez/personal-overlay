@@ -1,7 +1,7 @@
 # Copyright 2013-2020 Canek Peláez
 # Distributed under the terms of the GNU General Public License v3
 
-EAPI="7"
+EAPI="8"
 
 inherit git-r3 bash-completion-r1
 

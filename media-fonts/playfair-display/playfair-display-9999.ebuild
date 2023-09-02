@@ -1,7 +1,7 @@
 # Copyright 2013 Canek Peláez
 # Distributed under the terms of the GNU General Public License v2
 
-EAPI="7"
+EAPI="8"
 
 inherit git-r3 font xdg-utils
 
@@ -14,13 +14,8 @@ SLOT="0"
 IUSE=""
 KEYWORDS="~amd64 ~x86"
 
-FONT_S="fonts/TTF"
+FONT_S="fonts/VF-TTF"
 FONT_SUFFIX="ttf"
-
-src_prepare() {
-	default
-	xdg_environment_reset
-}
 
 src_install() {
 	font_src_install

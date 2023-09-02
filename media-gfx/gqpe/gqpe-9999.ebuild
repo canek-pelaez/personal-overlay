@@ -1,7 +1,7 @@
 # Copyright 2013 Canek Peláez
 # Distributed under the terms of the GNU General Public License v2
 
-EAPI="7"
+EAPI="8"
 
 VALA_MIN_API_VERSION=${VALA_MIN_API_VERSION:-0.50}
 VALA_MAX_API_VERSION=${VALA_MAX_API_VERSION:-0.56}
@@ -31,7 +31,7 @@ DEPEND="${RDEPEND}
 
 src_prepare() {
 	default
-	vala_src_prepare
+	vala_setup
 }
 
 src_configure() {
@@ -43,13 +43,13 @@ src_install() {
 }
 
 pkg_postinst() {
-	gnome2_icon_cache_update
-	gnome2_schemas_update
+	xdg_icon_cache_update
 	xdg_desktop_database_update
+	gnome2_schemas_update
 }
 
 pkg_postrm() {
-	gnome2_icon_cache_update
-	gnome2_schemas_update
+	xdg_icon_cache_update
 	xdg_desktop_database_update
+	gnome2_schemas_update
 }

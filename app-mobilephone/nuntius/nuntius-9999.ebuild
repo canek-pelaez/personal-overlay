@@ -2,7 +2,7 @@
 # Distributed under the terms of the GNU General Public License v2
 # $Header: $
 
-EAPI="7"
+EAPI="8"
 GCONF_DEBUG="no"
 
 VALA_MIN_API_VERSION=${VALA_MIN_API_VERSION:-0.50}
@@ -30,5 +30,5 @@ DEPEND="${RDEPEND}
 "
 
 src_prepare() {
-	vala_src_prepare
+	vala_setup
 }
